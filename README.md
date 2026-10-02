@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MESSE·V Dual POC (Next.js)
 
-## Getting Started
+Next.js App Router port of `virtual-trade-show-interactive-demo.html` — both POC paths in standard React/TypeScript structure.
 
-First, run the development server:
+## POCs
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Route | Description |
+|-------|-------------|
+| `/` | Lobby — choose POC 1 or POC 2 |
+| `/hall/flat` | **POC 1** — 2D Nexus floor, WASD, socket avatars, proximity booth entry |
+| `/hall/threejs` | **POC 2** — same hall with copper theme |
+| `/booth/flat/[stallId]` | Illustrated SVG booth (click zones, viewBox zoom) |
+| `/booth/threejs/[stallId]` | Three.js FPP booth with raycast hotspots |
+
+## Stack
+
+- **Next.js 16** (App Router, `src/` directory)
+- **React 19** + **TypeScript**
+- **Three.js** + **GSAP** (booth animations)
+- Simulated WebSocket presence (`src/lib/socket/dummy-socket.ts`)
+
+## Project structure
+
+```
+src/
+  app/                    # Routes (lobby, hall, booth)
+  components/
+    hall/                 # Hall map UI + CSS module
+    booth/                # FlatBooth, ThreeBooth, BoothScreen
+    lobby/                # Lobby entry cards
+    layout/               # Topbar
+    providers/            # Toast
+  data/                   # Stalls, aisles, booth assets
+  hooks/                  # useHallEngine (movement, socket, map)
+  lib/
+    hall/                 # Geometry + map fit math
+    booth/                # Three.js booth engine
+    socket/               # Dummy socket
+  types/                  # Shared TypeScript types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd messe-v-dual-poc
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## Deploy (Netlify)
 
-To learn more about Next.js, take a look at the following resources:
+**GitHub Pages cannot host this app** — LiveKit tokens are minted on `/api/livekit-token` (server route). Use **Netlify** with the included `netlify.toml` and `@netlify/plugin-nextjs`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push this folder to a **public GitHub** repo (never commit `.env.local`; copy names from `.env.example`).
+2. [Netlify](https://app.netlify.com) → **Add new site** → **Import an existing project** → pick the repo.
+3. **Site configuration → Environment variables** — add:
+   - `NEXT_PUBLIC_LIVEKIT_URL`
+   - `LIVEKIT_API_KEY`
+   - `LIVEKIT_API_SECRET` (full secret from LiveKit Cloud, not masked)
+4. Deploy, then test: `https://<your-site>.netlify.app/video-call`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+See `VIDEO_CALL_POC.md` for LiveKit setup and two-device testing.
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The original HTML demo at `:4173` is unchanged — this is a separate Next.js app.
+- Replace `DummySocket` internals with a real WebSocket when the backend is ready.
+- `messe-v-poc/` is a different, older Next.js experiment in the same repo.

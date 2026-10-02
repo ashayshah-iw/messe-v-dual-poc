@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1050" viewBox="0 0 1700 1050">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/></marker>
+    <marker id="al" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#b45309"/></marker>
+  </defs>
+
+  <rect width="1700" height="1050" fill="#f8fafc"/>
+  <text x="850" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Virtual Exhibition Platform � AWS Infrastructure Architecture</text>
+  <text x="850" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#64748b">Including Login / Auth Flow � Next.js � NestJS � PostgreSQL � Redis � S3 � Socket.IO</text>
+
+  <!-- LOGIN FLOW BANNER -->
+  <rect x="40" y="72" width="1620" height="52" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8"/>
+  <text x="60" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#92400e">LOGIN FLOW</text>
+  <text x="60" y="114" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#78350f">1 Login page (Next.js)  ?  2 Edge R53/CF/WAF/ALB  ?  3 NestJS Auth (ECS)  ?  4 Verify user in PostgreSQL + issue JWT  ?  5 Store token  ?  6 APIs + Socket.IO with JWT  ?  7 Role dashboard</text>
+
+  <!-- LEFT USERS -->
+  <rect x="30" y="145" width="210" height="520" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="30" y="145" width="210" height="40" rx="14" fill="#e2e8f0"/>
+  <rect x="30" y="165" width="210" height="20" fill="#e2e8f0"/>
+  <text x="135" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Users / Clients</text>
+
+  <text x="48" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#334155">Roles</text>
+  <text x="48" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">� Super Admin</text>
+  <text x="48" y="252" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">� Organizer</text>
+  <text x="48" y="272" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">� Exhibitor</text>
+  <text x="48" y="292" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">� Exhibitor Member</text>
+  <text x="48" y="312" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">� Visitor</text>
+
+  <rect x="48" y="340" width="174" height="70" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="135" y="368" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">Next.js Frontend</text>
+  <text x="135" y="388" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Web / Mobile</text>
+
+  <rect x="48" y="430" width="174" height="70" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.6"/>
+  <text x="135" y="455" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#92400e">1. Login page</text>
+  <text x="135" y="475" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#78350f">email + password</text>
+  <text x="135" y="492" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#a16207">or invite / reset link</text>
+
+  <text x="135" y="540" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">HTTPS + later WSS</text>
+  <text x="135" y="560" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">JWT after success</text>
+  <text x="135" y="595" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#0f172a">7. Role dashboard</text>
+  <text x="135" y="615" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">Admin / Organizer /</text>
+  <text x="135" y="630" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">Exhibitor / Visitor hall</text>
+
+  <line x1="240" y1="460" x2="285" y2="220" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="250" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" fill="#b45309">login</text>
+
+  <!-- AWS VPC -->
+  <rect x="290" y="145" width="1100" height="640" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2.5"/>
+  <text x="310" y="172" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#4338ca">AWS Cloud / VPC (Multi-AZ)</text>
+
+  <!-- Public edge -->
+  <rect x="315" y="190" width="1050" height="95" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="330" y="215" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#166534">Internet / Public Layer</text>
+  <text x="700" y="215" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#92400e">2. Login HTTPS request</text>
+
+  <rect x="340" y="230" width="120" height="36" rx="8" fill="#fff" stroke="#16a34a"/>
+  <text x="400" y="253" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#166534">Route 53</text>
+  <line x1="460" y1="248" x2="490" y2="248" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="500" y="230" width="130" height="36" rx="8" fill="#fff" stroke="#16a34a"/>
+  <text x="565" y="253" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#166534">CloudFront</text>
+  <line x1="630" y1="248" x2="660" y2="248" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="670" y="230" width="90" height="36" rx="8" fill="#fff" stroke="#16a34a"/>
+  <text x="715" y="253" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#166534">WAF</text>
+  <line x1="760" y1="248" x2="790" y2="248" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="800" y="230" width="180" height="36" rx="8" fill="#fff" stroke="#16a34a"/>
+  <text x="890" y="253" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#166534">ALB (HTTP + WS)</text>
+  <rect x="1020" y="230" width="320" height="36" rx="8" fill="#fff" stroke="#16a34a" stroke-dasharray="4 3"/>
+  <text x="1180" y="253" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#166534">Public subnet � NAT / IGW outbound</text>
+
+  <line x1="890" y1="266" x2="890" y2="300" stroke="#f59e0b" stroke-width="2" marker-end="url(#al)"/>
+
+  <!-- App layer -->
+  <rect x="315" y="305" width="520" height="175" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="330" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e40af">Application Private Layer � AZ1 + AZ2</text>
+  <text x="700" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#92400e">3. /auth/login ? NestJS Auth</text>
+
+  <rect x="340" y="350" width="220" height="110" rx="10" fill="#fff" stroke="#2563eb"/>
+  <text x="450" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#1e40af">ECS Fargate � NestJS</text>
+  <text x="450" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">Auth � JWT � RBAC</text>
+  <text x="450" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Exhibitions � Stalls</text>
+  <text x="450" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Exhibitors � Meetings</text>
+
+  <rect x="585" y="350" width="220" height="110" rx="10" fill="#fff" stroke="#2563eb"/>
+  <text x="695" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#1e40af">Next.js Assets</text>
+  <text x="695" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">CDN / SSR</text>
+  <text x="695" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Login UI + dashboards</text>
+  <text x="695" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Virtual hall UI</text>
+
+  <!-- Realtime -->
+  <rect x="855" y="305" width="510" height="175" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="870" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#92400e">Real-Time Layer</text>
+  <text x="1100" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#92400e">6. Socket.IO + JWT</text>
+
+  <rect x="880" y="350" width="220" height="110" rx="10" fill="#fff" stroke="#d97706"/>
+  <text x="990" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#92400e">Socket.IO Gateway</text>
+  <text x="990" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">Presence � Movement</text>
+  <text x="990" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Chat � Notifications</text>
+  <text x="990" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Meeting events</text>
+
+  <rect x="1125" y="350" width="210" height="110" rx="10" fill="#fff" stroke="#d97706"/>
+  <text x="1230" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#92400e">ElastiCache Redis</text>
+  <text x="1230" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">Session / presence</text>
+  <text x="1230" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Pub/Sub adapter</text>
+  <text x="1230" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Optional JWT denylist</text>
+
+  <!-- Media -->
+  <rect x="315" y="505" width="520" height="120" rx="12" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="330" y="532" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#3730a3">Media Layer</text>
+  <rect x="340" y="550" width="200" height="55" rx="8" fill="#fff" stroke="#4f46e5"/>
+  <text x="440" y="575" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#3730a3">Amazon S3</text>
+  <text x="440" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">Docs � Images � Video</text>
+  <rect x="570" y="550" width="240" height="55" rx="8" fill="#fff" stroke="#4f46e5"/>
+  <text x="690" y="575" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#3730a3">Pre-signed Upload</text>
+  <text x="690" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">NestJS URL ? direct S3 PUT</text>
+
+  <!-- Data -->
+  <rect x="855" y="505" width="510" height="120" rx="12" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="870" y="532" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#9d174d">Data Private Layer</text>
+  <text x="1100" y="532" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#92400e">4. User verify + JWT</text>
+  <rect x="880" y="550" width="220" height="55" rx="8" fill="#fff" stroke="#db2777"/>
+  <text x="990" y="575" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#9d174d">RDS PostgreSQL</text>
+  <text x="990" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">users � roles � audit</text>
+  <rect x="1130" y="550" width="200" height="55" rx="8" fill="#fff" stroke="#db2777"/>
+  <text x="1230" y="575" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#9d174d">Read Replica</text>
+  <text x="1230" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">optional reporting</text>
+
+  <line x1="450" y1="460" x2="450" y2="500" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="450" y1="500" x2="990" y2="500" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="990" y1="500" x2="990" y2="545" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#al)"/>
+
+  <text x="330" y="660" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569">5. Client stores JWT  �  Protected REST uses Authorization header  �  Socket.IO handshake sends JWT  �  RBAC + tenant checks on every request</text>
+  <text x="330" y="682" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569">Password reset / exhibitor invite emails leave via NAT ? SES. Visitor movement stays in Redis (not continuous PostgreSQL writes).</text>
+  <text x="330" y="760" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Subnets: Public (ALB/NAT) � Private App (ECS) � Private Data (RDS/Redis) across AZ1 + AZ2</text>
+
+  <!-- RIGHT external -->
+  <rect x="1420" y="190" width="250" height="420" rx="14" fill="#fff" stroke="#a855f7" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <rect x="1420" y="190" width="250" height="40" rx="14" fill="#f3e8ff"/>
+  <rect x="1420" y="210" width="250" height="20" fill="#f3e8ff"/>
+  <text x="1545" y="217" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#6b21a8">External Services</text>
+
+  <rect x="1445" y="255" width="200" height="60" rx="8" fill="#faf5ff" stroke="#a855f7"/>
+  <text x="1545" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#6b21a8">SES Email</text>
+  <text x="1545" y="298" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">reset / invite</text>
+
+  <rect x="1445" y="335" width="200" height="60" rx="8" fill="#faf5ff" stroke="#a855f7"/>
+  <text x="1545" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#6b21a8">SNS Push</text>
+  <text x="1545" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">notifications</text>
+
+  <rect x="1445" y="415" width="200" height="60" rx="8" fill="#faf5ff" stroke="#a855f7"/>
+  <text x="1545" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#6b21a8">WebRTC / Video</text>
+  <text x="1545" y="458" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">after auth token</text>
+
+  <rect x="1445" y="495" width="200" height="60" rx="8" fill="#faf5ff" stroke="#a855f7" stroke-dasharray="3 2"/>
+  <text x="1545" y="520" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#6b21a8">Payment</text>
+  <text x="1545" y="538" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#64748b">optional later</text>
+
+  <line x1="1365" y1="285" x2="1415" y2="285" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+
+  <!-- BOTTOM -->
+  <rect x="30" y="820" width="800" height="120" rx="12" fill="#fff" stroke="#64748b"/>
+  <text x="50" y="850" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">Operations &amp; Security</text>
+  <text x="50" y="878" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">IAM � Secrets Manager � KMS � CloudWatch � CloudTrail � WAF � ECR � Backup</text>
+  <text x="50" y="902" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">JWT secret in Secrets Manager � password hashing � rate limit login</text>
+  <text x="50" y="926" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">RBAC + tenant isolation on every protected API and socket event</text>
+
+  <rect x="860" y="820" width="810" height="120" rx="12" fill="#fff" stroke="#64748b"/>
+  <text x="880" y="850" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">CI / CD Pipeline</text>
+  <text x="880" y="885" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#334155">GitHub  ?  CodePipeline / Actions  ?  ECR  ?  ECS Fargate</text>
+  <text x="880" y="915" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#64748b">Deploy NestJS Auth + APIs � migrate PostgreSQL � scale Multi-AZ</text>
+</svg>

@@ -1,0 +1,322 @@
+.screen {
+  background: radial-gradient(80% 60% at 70% 10%, rgba(61, 214, 195, 0.12), transparent 55%),
+    linear-gradient(160deg, #0b0c24 0%, #16174a 55%, #0b0c24 100%);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.joinWrap {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.joinCard {
+  width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 24px;
+  border: 1px solid var(--line-2);
+  border-radius: 14px;
+  background: rgba(18, 19, 58, 0.88);
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+.joinCard h1 {
+  margin: 0;
+  font-family: var(--f-disp);
+  font-size: clamp(28px, 5vw, 40px);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.joinLead {
+  margin: 0;
+  color: var(--fg-2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field span {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line-2);
+  background: rgba(11, 12, 36, 0.85);
+  color: var(--fg);
+  font-size: 15px;
+}
+
+.field input:focus {
+  outline: 2px solid color-mix(in srgb, var(--mint) 50%, transparent);
+  border-color: var(--mint);
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line-2));
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: #ffc9d2;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.roomShell,
+.room {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.roomHeader {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px 8px;
+}
+
+.roomHeader h2 {
+  margin: 4px 0 0;
+  font-family: var(--f-disp);
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.roomHeaderRight {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgba(11, 12, 36, 0.9);
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fg-2);
+}
+
+.statusOk {
+  border-color: color-mix(in srgb, var(--mint) 50%, var(--line-2));
+  color: var(--mint);
+}
+.statusOk .statusDot {
+  background: var(--mint);
+  box-shadow: 0 0 0 4px rgba(37, 192, 139, 0.2);
+}
+
+.statusWarn {
+  border-color: color-mix(in srgb, var(--amber) 50%, var(--line-2));
+  color: var(--amber);
+}
+.statusWarn .statusDot {
+  background: var(--amber);
+  animation: pulse 1s ease infinite;
+}
+
+.statusBad {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line-2));
+  color: #ff8da0;
+}
+.statusBad .statusDot {
+  background: var(--accent);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  gap: 12px;
+  padding: 8px 18px 12px;
+  overflow: auto;
+}
+
+.gridOne {
+  grid-template-columns: 1fr;
+}
+
+.gridTwo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gridFour {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(180px, 1fr);
+}
+
+.gridMany {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: minmax(160px, 220px);
+}
+
+.tile {
+  position: relative;
+  min-height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  background: #0a0b20;
+}
+
+.tileLocal {
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--amber) 55%, transparent);
+}
+
+.tileVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0a0b20;
+}
+
+.tilePlaceholder {
+  height: 100%;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  color: var(--fg-2);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tileMeta {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: rgba(11, 12, 36, 0.78);
+  backdrop-filter: blur(6px);
+  font-size: 12px;
+}
+
+.tileMeta em {
+  font-style: normal;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--fg-2);
+  text-transform: uppercase;
+}
+
+.controls {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px 20px;
+}
+
+.ctrlBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 108px;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgba(11, 12, 36, 0.92);
+  color: var(--fg);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ctrlBtn:hover {
+  border-color: var(--fg-2);
+}
+
+.ctrlOff {
+  color: #ff8da0;
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line-2));
+}
+
+.ctrlActive {
+  color: var(--mint);
+  border-color: color-mix(in srgb, var(--mint) 55%, var(--line-2));
+}
+
+.ctrlLeave {
+  background: color-mix(in srgb, var(--accent) 88%, #000);
+  border-color: transparent;
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .gridTwo,
+  .gridFour {
+    grid-template-columns: 1fr;
+  }
+
+  .roomHeader {
+    flex-direction: column;
+  }
+
+  .ctrlBtn {
+    min-width: calc(50% - 8px);
+  }
+}

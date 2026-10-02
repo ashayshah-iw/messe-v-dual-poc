@@ -1,0 +1,285 @@
+.panel {
+  position: absolute;
+  top: 58px;
+  bottom: 52px;
+  z-index: 26;
+  width: min(260px, 28vw);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: rgba(11, 12, 36, 0.96);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.panelLeft {
+  left: 14px;
+}
+
+.panelRight {
+  right: 14px;
+}
+
+.head {
+  flex: none;
+}
+
+.head .eyebrow {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin-bottom: 4px;
+}
+
+.head h2 {
+  margin: 0;
+  font-family: var(--f-disp);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.totals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  flex: none;
+}
+
+.totals div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surf);
+  text-align: center;
+}
+
+.totals span {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.totals b {
+  font-family: var(--f-disp);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.zoneList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.zoneList::-webkit-scrollbar,
+.companyList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.zoneList::-webkit-scrollbar-thumb,
+.companyList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+}
+
+.zoneRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border: 1px solid color-mix(in srgb, var(--zone) 35%, var(--line-2));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--zone) 8%, transparent);
+  color: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.zoneRow:hover {
+  border-color: color-mix(in srgb, var(--zone) 70%, var(--line-2));
+  background: color-mix(in srgb, var(--zone) 14%, transparent);
+}
+
+.zoneRowActive {
+  border-color: var(--zone);
+  background: color-mix(in srgb, var(--zone) 16%, transparent);
+  box-shadow: inset 3px 0 0 var(--zone);
+}
+
+.swatch {
+  width: 8px;
+  height: 32px;
+  border-radius: 3px;
+  background: var(--zone);
+  flex: none;
+}
+
+.summaryMain {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--f-disp);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--zone);
+}
+
+.counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.counts em {
+  font-style: normal;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.stallMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surf);
+}
+
+.stallMetaSwatch {
+  width: 10px;
+  height: 36px;
+  border-radius: 3px;
+  background: var(--zone);
+  flex: none;
+}
+
+.stallMeta div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.stallMeta b {
+  font-family: var(--f-disp);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.stallMeta em {
+  font-style: normal;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.companyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.companyList li {
+  display: grid;
+  grid-template-columns: 8px 48px 1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 11px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.companyList b {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--fg-2);
+}
+
+.companyList em {
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.empty {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--fg-2);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .panel {
+    width: min(200px, 30vw);
+    top: 52px;
+    bottom: 48px;
+    padding: 10px;
+  }
+
+  .panelLeft {
+    left: 8px;
+  }
+
+  .panelRight {
+    right: 8px;
+  }
+
+  .totals b {
+    font-size: 16px;
+  }
+
+  .head h2 {
+    font-size: 15px;
+  }
+}
