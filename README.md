@@ -55,13 +55,19 @@ Open [http://localhost:3000](http://localhost:3000)
 
 1. Push this folder to a **public GitHub** repo (never commit `.env.local`; copy names from `.env.example`).
 2. [Netlify](https://app.netlify.com) → **Add new site** → **Import an existing project** → pick the repo.
-3. **Site configuration → Environment variables** — add:
-   - `NEXT_PUBLIC_LIVEKIT_URL`
-   - `LIVEKIT_API_KEY`
-   - `LIVEKIT_API_SECRET` (full secret from LiveKit Cloud, not masked)
-4. Deploy, then test: `https://<your-site>.netlify.app/video-call`
+3. **Site configuration → Environment variables** — add LiveKit and (optional) 100ms:
+   - `NEXT_PUBLIC_LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`
+   - `HMS_ACCESS_KEY`, `HMS_SECRET`, `HMS_DEFAULT_ROLE` (optional)
+4. Deploy, then test:
+   - `https://<your-site>.netlify.app/video-call`
+   - `https://<your-site>.netlify.app/video-call-100ms`
 
-See `VIDEO_CALL_POC.md` for LiveKit setup and two-device testing.
+See `VIDEO_CALL_POC.md` (LiveKit) and `VIDEO_CALL_100MS_POC.md` (100ms) for setup and two-device testing.
+
+| Route | Vendor |
+|-------|--------|
+| `/video-call` | LiveKit |
+| `/video-call-100ms` | 100ms |
 
 ## Notes
 

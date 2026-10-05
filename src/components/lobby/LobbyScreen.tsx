@@ -37,6 +37,24 @@ export function LobbyScreen() {
             </Link>
           </article>
         </div>
+        <div className="poc-card" style={{ marginTop: 16 }}>
+          <article>
+            <span className="tag flat">LiveKit</span>
+            <h3>Video call POC</h3>
+            <p>WebRTC demo with LiveKit Cloud — same room from two browsers.</p>
+            <Link href="/video-call" className="btn">
+              LiveKit demo →
+            </Link>
+          </article>
+          <article>
+            <span className="tag flat">100ms</span>
+            <h3>Video call POC (100ms)</h3>
+            <p>Parallel vendor demo for R&amp;D — compare quality and integration effort.</p>
+            <Link href="/video-call-100ms" className="btn">
+              100ms demo →
+            </Link>
+          </article>
+        </div>
       </div>
     </section>
   );
